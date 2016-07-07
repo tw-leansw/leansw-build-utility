@@ -1,4 +1,5 @@
 from ${fromImageName}
-LABEL go.release.pipeline.name=${goRcPipelineName}
-LABEL go.release.pipeline.label=${goRcPipelineLabel}
+LABEL go.release.trigger.user=${goReleaseTiggerUser}
+LABEL go.release.pipeline.name=${goReleasePipelineName}
+LABEL go.release.pipeline.label=${goReleasePipelineLabel}
 LABEL go.stage=release

@@ -1,4 +1,5 @@
 from ${fromImageName}
+LABEL go.rc.trigger.user=${goRcTiggerUser}
 LABEL go.rc.pipeline.name=${goRcPipelineName}
 LABEL go.rc.pipeline.label=${goRcPipelineLabel}
 LABEL go.stage=rc
