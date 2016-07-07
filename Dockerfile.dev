@@ -1,5 +1,5 @@
 FROM ${fromImageName}
-LABEL go.dev.trigger.user=${goDevTiggerUser}
+LABEL go.dev.trigger.user=${goDevTriggerUser}
 LABEL go.dev.pipeline.name=${goDevPipelineName}
 LABEL go.dev.pipeline.label=${goDevPipelineLabel}
 LABEL go.dev.revision=${goDevRevision}
