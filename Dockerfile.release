@@ -1,0 +1,4 @@
+from ${fromImageName}
+LABEL go.release.pipeline.name=${goRcPipelineName}
+LABEL go.release.pipeline.label=${goRcPipelineLabel}
+LABEL go.stage=release
