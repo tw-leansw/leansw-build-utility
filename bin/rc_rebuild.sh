@@ -1,6 +1,8 @@
 
 docker pull $IMAGE_FROM 
 
+IMAGE_RC_VERSION=$LEANSW_DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:rc-$GO_PIPELINE_LABEL
+IMAGE_RC=$LEANSW_DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:rc
 
 echo "begin generate Dockerfile"
 source $HOME/.bashrc
@@ -15,7 +17,7 @@ echo "============================"
 cat Dockerfile.tmp
 echo "============================"
 
-docker build -f Dockerfile.tmp -t  $IMAGE_RC_VERSION .
+docker build -f Dockerfile.tmp -t $IMAGE_RC_VERSION .
 rm Dockerfile.tmp
 docker rmi $IMAGE_FROM
 
