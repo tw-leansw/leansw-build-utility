@@ -14,7 +14,7 @@ fmpp /var/lib/go-agent/pipelines/pipeline-docker-images/Dockerfile.dev \
 goDevTriggerUser:$GO_TRIGGER_USER, \
 goDevPipelineName:$GO_PIPELINE_NAME, \
 goDevPipelineLabel:$GO_PIPELINE_LABEL, \
-goDevRevision:$GO_REVISION \
+goDevRevision:$GO_REVISION, \
 goDevToRevision:$GO_TO_REVISION, \
 goDevFromRevision:$GO_FROM_REVISION " \
 -oDockerfile.tmp
