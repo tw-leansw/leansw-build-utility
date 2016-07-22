@@ -1,5 +1,5 @@
 
-IMAGE_FROM=leansw/$DOCKER_IMAGE_NAME
+IMAGE_FROM=leansw/$DOCKER_IMAGE_NAME:dep
 
 mkdir docker_tmp
 cd docker_tmp
