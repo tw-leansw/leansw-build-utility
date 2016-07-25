@@ -24,6 +24,7 @@ function rebuild_dep_img ()
   docker tag -f ${IMAGE_BUILD} ${LEANSW_DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}-dep
   echo "Successfully tag image: " ${LEANSW_DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}-dep
   docker push ${LEANSW_DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}-dep
+  docker rmi ${IMAGE_BUILD}
   [[ $?=0 ]] && echo "push done." || exit 1
   cd .. && rm -rf docker_tmp
   exit 0
