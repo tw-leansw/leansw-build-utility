@@ -1,5 +1,5 @@
 
-IMAGE_FROM=${LEANSW_DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}
+IMAGE_FROM=leansw/${DOCKER_IMAGE_NAME}
 
 mkdir docker_tmp
 cd docker_tmp
