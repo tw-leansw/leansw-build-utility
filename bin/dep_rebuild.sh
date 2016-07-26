@@ -13,7 +13,7 @@ function rebuild_dep_img ()
   mkdir docker_tmp
   echo "Copying dependency libs to target/lib ..."
   mvn dependency:copy-dependencies -DoutputDirectory=docker_tmp/target/lib
-  [[ $?=0 ]] && echo "Copy dependencies Done." || echo "Error occurs copy dependency libs. Aborting..." && exit 1
+  [[ $?=0 ]] && echo "Copy dependencies Done." || (echo "Error occurs copy dependency libs. Aborting..." && exit 1)
   cd docker_tmp
   IMAGE_BUILD=${DOCKER_IMAGE_NAME}_dep_tmp
   cat /var/lib/go-agent/pipelines/pipeline-docker-images/Dockerfile.dep > Dockerfile
