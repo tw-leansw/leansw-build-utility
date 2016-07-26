@@ -3,7 +3,7 @@
 DEP_IMG=${LEANSW_DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:dep
 docker pull ${DEP_IMG} && echo "Pulling dependency image successfully." || echo "Can not pull Dependency image. Still going on to build new dep image."
 OLD_SHA=$( docker inspect -f '{{ index .Config.Labels "lean.dependency.sha" }}' ${DEP_IMG} )
-CURRENT_SHA=$( mvn dependency:list |grep -e '\[INFO\]    ' |shasum |grep -e '[a-z0-9]*' -o )
+CURRENT_SHA=$( mvn dependency:list -DincludeScope=runtime |grep -e '\[INFO\]    ' |shasum |grep -e '[a-z0-9]*' -o )
 echo "[Dep Image shasum]:" ${OLD_SHA}
 echo "[Current shasum]:" ${CURRENT_SHA}
 
