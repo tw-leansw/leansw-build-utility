@@ -1,6 +1,7 @@
 
 IMAGE_FROM=leansw/${DOCKER_IMAGE_NAME}
-
+docker rmi ${IMAGE_FROM}:bak
+docker tag ${IMAGE_FROM} ${IMAGE_FROM}:bak
 mkdir docker_tmp
 cd docker_tmp
 
