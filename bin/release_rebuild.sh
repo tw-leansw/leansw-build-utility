@@ -23,7 +23,7 @@ rm Dockerfile.tmp
 docker rmi $IMAGE_FROM
 
 
-docker tag -f $IMAGE_RELEASE_VERSION $IMAGE_RELEASE
+docker tag $IMAGE_RELEASE_VERSION $IMAGE_RELEASE
 docker push $IMAGE_RELEASE
 docker rmi $IMAGE_RELEASE
 

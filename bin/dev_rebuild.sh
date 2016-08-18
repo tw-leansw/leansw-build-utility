@@ -29,7 +29,7 @@ docker build -f Dockerfile.tmp -t  $IMAGE_BUILD .
 
 docker rmi  $IMAGE_FROM
 
-docker tag -f $IMAGE_BUILD $LEANSW_DOCKER_REGISTRY/$DOCKER_IMAGE_NAME
+docker tag $IMAGE_BUILD $LEANSW_DOCKER_REGISTRY/$DOCKER_IMAGE_NAME
 rm Dockerfile.tmp
 
 cd ..
