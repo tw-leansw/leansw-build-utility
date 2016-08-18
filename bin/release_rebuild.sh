@@ -7,6 +7,9 @@ IMAGE_RELEASE=$LEANSW_DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:release
 
 echo "begin generate Dockerfile"
 source $HOME/.bashrc
+source "$HOME/.jenv/bin/jenv-init.sh"
+jenv use java 1.8.0_71
+
 fmpp /var/lib/go-agent/pipelines/pipeline-docker-images/Dockerfile.release \
 -D"fromImageName:$IMAGE_FROM, \
 goReleaseTriggerUser:$GO_TRIGGER_USER, \

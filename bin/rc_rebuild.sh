@@ -6,6 +6,9 @@ IMAGE_RC=$LEANSW_DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:rc
 
 echo "begin generate Dockerfile"
 source $HOME/.bashrc
+source "$HOME/.jenv/bin/jenv-init.sh"
+jenv use java 1.8.0_71
+
 fmpp /var/lib/go-agent/pipelines/pipeline-docker-images/Dockerfile.rc \
 -D"fromImageName:$IMAGE_FROM, \
 goRcTriggerUser:$GO_TRIGGER_USER, \

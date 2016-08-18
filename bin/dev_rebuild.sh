@@ -7,6 +7,9 @@ cd docker_tmp
 
 echo "begin generate Dockerfile"
 source $HOME/.bashrc
+source "$HOME/.jenv/bin/jenv-init.sh"
+jenv use java 1.8.0_71
+
 echo "GO_TRIGGER_USER"
 echo $GO_TRIGGER_USER
 
