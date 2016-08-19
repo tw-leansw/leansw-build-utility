@@ -1,4 +1,4 @@
-LEANSW_DOCKER_REGISTRY = registry.cn-hangzhou.aliyuncs.com/leansw
+export LEANSW_DOCKER_REGISTRY = registry.cn-hangzhou.aliyuncs.com/leansw
 IMAGE_FROM=leansw/${DOCKER_IMAGE_NAME}
 docker rmi ${IMAGE_FROM}:bak
 docker tag ${IMAGE_FROM} ${IMAGE_FROM}:bak
