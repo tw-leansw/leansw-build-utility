@@ -1,4 +1,4 @@
-export LEANSW_DOCKER_REGISTRY = registry.cn-hangzhou.aliyuncs.com/leansw
+export LEANSW_DOCKER_REGISTRY=registry.cn-hangzhou.aliyuncs.com/leansw
 docker pull $IMAGE_FROM
 
 IMAGE_RC_VERSION=$LEANSW_DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:rc-$GO_PIPELINE_LABEL
