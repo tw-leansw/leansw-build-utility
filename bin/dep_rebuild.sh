@@ -1,5 +1,6 @@
 #!/bin/bash
 # init
+LEANSW_DOCKER_REGISTRY = registry.cn-hangzhou.aliyuncs.com/leansw
 DEP_IMG=${LEANSW_DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:dep
 docker pull ${DEP_IMG} && echo "Pulling dependency image successfully." || echo "Can not pull Dependency image. Still going on to build new dep image."
 OLD_SHA=$( docker inspect -f '{{ index .Config.Labels "lean.dependency.sha" }}' ${DEP_IMG} )
