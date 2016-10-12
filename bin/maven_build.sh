@@ -1,4 +1,3 @@
 mvn clean
-rm -rf src/main/docker/lib
 mvn dependency:copy-dependencies -DincludeScope=runtime -DoutputDirectory=target/lib
-mvn -U package -Pdocker  -DskipTests=true -s settings.xml
+mvn -U package  -DskipTests=true -s settings-1.0.xml
