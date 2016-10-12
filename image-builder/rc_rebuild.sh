@@ -5,11 +5,6 @@ docker pull $IMAGE_FROM
 IMAGE_RC_VERSION=$LEANSW_DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:rc-$GO_PIPELINE_LABEL
 IMAGE_RC=$LEANSW_DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:rc
 
-echo "begin generate Dockerfile"
-source $HOME/.bashrc
-source "$HOME/.jenv/bin/jenv-init.sh"
-jenv use java 1.8.0_71
-
 echo "
 from ${fromImageName}
 LABEL go.rc.trigger.user=${GO_TRIGGER_USER}
