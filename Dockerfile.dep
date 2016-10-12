@@ -1,4 +1,0 @@
-FROM java:8
-ARG currentSHA
-ADD target/lib /lean/java/lib
-LABEL lean.dependency.sha=$currentSHA

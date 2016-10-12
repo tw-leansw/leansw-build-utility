@@ -1,9 +1,0 @@
-FROM ${fromImageName}
-LABEL go.dev.trigger.user=${goDevTriggerUser}
-LABEL go.dev.pipeline.name=${goDevPipelineName}
-LABEL go.dev.pipeline.label=${goDevPipelineLabel}
-LABEL go.dev.revision=${goDevRevision}
-LABEL go.dev.to.revision=${goDevToRevision}
-LABEL go.dev.from.revision=${goDevFromRevision}
-LABEL go.stage=dev
-

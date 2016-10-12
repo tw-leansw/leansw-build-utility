@@ -11,11 +11,16 @@ source $HOME/.bashrc
 source "$HOME/.jenv/bin/jenv-init.sh"
 jenv use java 1.8.0_71
 
-fmpp /var/lib/go-agent/pipelines/pipeline-docker-images/Dockerfile.release \
--D"fromImageName:$IMAGE_FROM, \
-goReleaseTriggerUser:$GO_TRIGGER_USER, \
-goReleasePipelineName:$GO_PIPELINE_NAME, \
-goReleasePipelineLabel:$GO_PIPELINE_LABEL" -oDockerfile.tmp
+echo "
+from ${IMAGE_FROM}
+LABEL go.release.trigger.user=${GO_TRIGGER_USER}
+LABEL go.release.pipeline.name=${GO_PIPELINE_NAME}
+LABEL go.release.pipeline.label=${GO_PIPELINE_LABEL}
+LABEL go.stage=release
+" > Dockerfile.tmp
+
+
+LABEL go.dev.trigger.user=${GO_TRIGGER_USER}
 
 echo "generated Dockerfile:"
 echo "============================"

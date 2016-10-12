@@ -13,15 +13,17 @@ jenv use java 1.8.0_71
 echo "GO_TRIGGER_USER"
 echo $GO_TRIGGER_USER
 
-fmpp /var/lib/go-agent/pipelines/pipeline-docker-images/Dockerfile.dev \
--D"fromImageName:$IMAGE_FROM, \
-goDevTriggerUser:$GO_TRIGGER_USER, \
-goDevPipelineName:$GO_PIPELINE_NAME, \
-goDevPipelineLabel:$GO_PIPELINE_LABEL, \
-goDevRevision:$GO_REVISION, \
-goDevToRevision:$GO_TO_REVISION, \
-goDevFromRevision:$GO_FROM_REVISION " \
--oDockerfile.tmp
+
+echo ```
+FROM ${IMAGE_FROM}
+LABEL go.dev.trigger.user=${GO_TRIGGER_USER}
+LABEL go.dev.pipeline.name=${GO_PIPELINE_NAME}
+LABEL go.dev.pipeline.label=${GO_PIPELINE_LABEL}
+LABEL go.dev.revision=${GO_REVISION}
+LABEL go.dev.to.revision=${GO_TO_REVISION}
+LABEL go.dev.from.revision=${GO_FROM_REVISION}
+LABEL go.stage=dev
+``` > Dockerfile.tmp
 
 echo "generated Dockerfile:"
 echo "============================"

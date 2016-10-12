@@ -10,11 +10,13 @@ source $HOME/.bashrc
 source "$HOME/.jenv/bin/jenv-init.sh"
 jenv use java 1.8.0_71
 
-fmpp /var/lib/go-agent/pipelines/pipeline-docker-images/Dockerfile.rc \
--D"fromImageName:$IMAGE_FROM, \
-goRcTriggerUser:$GO_TRIGGER_USER, \
-goRcPipelineName:$GO_PIPELINE_NAME, \
-goRcPipelineLabel:$GO_PIPELINE_LABEL" -oDockerfile.tmp
+echo "
+from ${fromImageName}
+LABEL go.rc.trigger.user=${GO_TRIGGER_USER}
+LABEL go.rc.pipeline.name=${GO_PIPELINE_NAME}
+LABEL go.rc.pipeline.label=${GO_PIPELINE_LABEL}
+LABEL go.stage=rc
+" > Dockerfile.tmp
 
 echo "generated Dockerfile:"
 echo "============================"
