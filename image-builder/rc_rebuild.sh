@@ -5,12 +5,12 @@ docker pull $IMAGE_FROM
 IMAGE_RC_VERSION=$LEANSW_DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:rc-$GO_PIPELINE_LABEL
 IMAGE_RC=$LEANSW_DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:rc
 
-echo "
-from ${fromImageName}
-LABEL go.rc.trigger.user=${GO_TRIGGER_USER}
-LABEL go.rc.pipeline.name=${GO_PIPELINE_NAME}
-LABEL go.rc.pipeline.label=${GO_PIPELINE_LABEL}
-LABEL go.stage=rc
+echo "\n\
+from ${fromImageName}\n\
+LABEL go.rc.trigger.user=${GO_TRIGGER_USER}\n\
+LABEL go.rc.pipeline.name=${GO_PIPELINE_NAME}\n\
+LABEL go.rc.pipeline.label=${GO_PIPELINE_LABEL}\n\
+LABEL go.stage=rc\n\
 " > Dockerfile.tmp
 
 echo "generated Dockerfile:"

@@ -5,12 +5,12 @@ docker pull $IMAGE_FROM
 IMAGE_RELEASE_VERSION=$LEANSW_DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:release-$GO_PIPELINE_LABEL
 IMAGE_RELEASE=$LEANSW_DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:release
 
-echo "
-from ${IMAGE_FROM}
-LABEL go.release.trigger.user=${GO_TRIGGER_USER}
-LABEL go.release.pipeline.name=${GO_PIPELINE_NAME}
-LABEL go.release.pipeline.label=${GO_PIPELINE_LABEL}
-LABEL go.stage=release
+echo " \
+from ${IMAGE_FROM} \n\
+LABEL go.release.trigger.user=${GO_TRIGGER_USER}\n\
+LABEL go.release.pipeline.name=${GO_PIPELINE_NAME}\n\
+LABEL go.release.pipeline.label=${GO_PIPELINE_LABEL}\n\
+LABEL go.stage=release\n\
 " > Dockerfile.tmp
 
 
