@@ -5,7 +5,7 @@ docker pull $IMAGE_FROM
 IMAGE_RELEASE_VERSION=$LEANSW_DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:release-$GO_PIPELINE_LABEL
 IMAGE_RELEASE=$LEANSW_DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:release
 
-echo " \
+echo " \n\
 from ${IMAGE_FROM} \n\
 LABEL go.release.trigger.user=${GO_TRIGGER_USER}\n\
 LABEL go.release.pipeline.name=${GO_PIPELINE_NAME}\n\

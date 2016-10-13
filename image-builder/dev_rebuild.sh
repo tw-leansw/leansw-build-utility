@@ -8,17 +8,15 @@ cd docker_tmp
 echo "GO_TRIGGER_USER"
 echo $GO_TRIGGER_USER
 
-
-echo "\n\
-FROM ${IMAGE_FROM}\n\
-LABEL go.dev.trigger.user=${GO_TRIGGER_USER}\n\
-LABEL go.dev.pipeline.name=${GO_PIPELINE_NAME}\n\
-LABEL go.dev.pipeline.label=${GO_PIPELINE_LABEL}\n\
-LABEL go.dev.revision=${GO_REVISION}\n\
-LABEL go.dev.to.revision=${GO_TO_REVISION}\n\
-LABEL go.dev.from.revision=${GO_FROM_REVISION}\n\
-LABEL go.stage=dev\n\
-" > Dockerfile.tmp
+rm -f Dockerfile.tmp
+echo "FROM ${IMAGE_FROM}" >> Dockerfile.tmp
+echo "LABEL go.dev.trigger.user=${GO_TRIGGER_USER}" >> Dockerfile.tmp
+echo "LABEL go.dev.pipeline.name=${GO_PIPELINE_NAME}" >> Dockerfile.tmp
+echo "LABEL go.dev.pipeline.label=${GO_PIPELINE_LABEL}" >> Dockerfile.tmp
+echo "LABEL go.dev.revision=${GO_REVISION}" >> Dockerfile.tmp
+echo "LABEL go.dev.to.revision=${GO_TO_REVISION}" >> Dockerfile.tmp
+echo "LABEL go.dev.from.revision=${GO_FROM_REVISION}" >> Dockerfile.tmp
+echo "LABEL go.stage=dev" >> Dockerfile.tmp
 
 echo "generated Dockerfile:"
 echo "============================"
