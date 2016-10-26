@@ -12,6 +12,7 @@ LEANSW_DOCKER_REGISTRY=reg.dev.twleansw.com/leansw
 
 if [ "${GO_STAGE}" = "dev" ]; then
     cp src/main/docker/* target/
+    printf "\n" >>target/Dockerfile
     echo "LABEL go.dev.revision=$(env | grep GO_REVISION_ | grep -o '[^=]*$')" >>target/Dockerfile
 else
     IMAGE_FROM=${LEANSW_DOCKER_REGISTRY}/${SERVICE_NAME}:${LABLE_FROM}
