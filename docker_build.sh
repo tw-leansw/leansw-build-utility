@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Usage: docker_build.sh <stage> <service-name> <previous-stage-label>
-# E.g. : docker_build.sh rc cd-metrics dev-88
-# Available stages: dev, rc, release
+# Eg.1: docker_build.sh dev cd-metrics
+# Eg.2: docker_build.sh rc cd-metrics dev-88
+# Stages Available: dev, rc, release
 
 # Parameters
 GO_STAGE=${1}
