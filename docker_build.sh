@@ -18,7 +18,7 @@ else
     echo "FROM ${IMAGE_FROM}" >target/Dockerfile
 fi
 
-cat <<EOF >>Dockerfile.gen
+cat <<EOF >>target/Dockerfile
 LABEL go.dev.trigger.user=${GO_TRIGGER_USER}
 LABEL go.dev.pipeline.name=${GO_PIPELINE_NAME}
 LABEL go.dev.pipeline.label=${GO_PIPELINE_LABEL}
