@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<cruisecontrol>
-  <info>
-    <property name="logdir" value="/var/lib/go-agent/pipelines/pipeline-docker-images/cruise-output" />
-    <property name="logfile" value="log.xml" />
-  </info>
-  <build />
-</cruisecontrol>
-
