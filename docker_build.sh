@@ -8,7 +8,7 @@
 GO_STAGE=${1}
 SERVICE_NAME=${2}
 LABLE_FROM=${3}
-LEANSW_DOCKER_REGISTRY=reg.dev.twleansw.com/leansw
+LEANSW_DOCKER_REGISTRY=${LEANSW_DOCKER_REGISTRY=reg.dev.twleansw.com/leansw}
 
 if [ "${GO_STAGE}" = "dev" ]; then
     cp src/main/docker/* target/
