@@ -12,11 +12,11 @@ LEANSW_DOCKER_REGISTRY=${LEANSW_DOCKER_REGISTRY=reg.dev.twleansw.com/leansw}
 
 if [ "${GO_STAGE}" = "dev" ]; then
     cp src/main/docker/* build/
-    printf "\n" >> build/Dockerfile
-    echo "LABEL go.dev.revision=$(env | grep GO_REVISION_ | grep -o '[^=]*$')" >> build/Dockerfile
+    printf "\n" >> build/Dockerfile_gradle
+    echo "LABEL go.dev.revision=$(env | grep GO_REVISION_ | grep -o '[^=]*$')" >> build/Dockerfile_gradle
 else
     IMAGE_FROM=${LEANSW_DOCKER_REGISTRY}/${SERVICE_NAME}:${LABLE_FROM}
-    echo "FROM ${IMAGE_FROM}" > build/Dockerfile
+    echo "FROM ${IMAGE_FROM}" > build/Dockerfile_gradle
 fi
 
 cat <<EOF >>build/Dockerfile
@@ -28,13 +28,13 @@ EOF
 
 echo "Triggered by: $GO_TRIGGER_USER"
 echo "======== Dockerfile ========"
-cat target/Dockerfile
+cat target/Dockerfile_gradle
 echo "============================"
 
 IMAGE_NAME=${LEANSW_DOCKER_REGISTRY}/${SERVICE_NAME}:${GO_STAGE}
 IMAGE_NAME_WITH_VERSION=${IMAGE_NAME}-${GO_PIPELINE_LABEL}
 
-docker build -f build/Dockerfile -t ${IMAGE_NAME} target
+docker build -f build/Dockerfile_gradle -t ${IMAGE_NAME} target
 docker tag ${IMAGE_NAME} ${IMAGE_NAME_WITH_VERSION}
 
 docker push ${IMAGE_NAME}
