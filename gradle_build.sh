@@ -2,4 +2,4 @@
 BUILD_UTILITY_FOLDER=${1:-_}
 
 gradle clean copyDependencies 
-gradle package
+gradle build
