@@ -25,6 +25,25 @@
   </mirrors>
 
   <profiles>
+    <profile>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <repositories>
+            <repository>
+                <id>nexus-public</id>
+                <name>Nexus Public Repository</name>
+                <url>http://artifactory.dev.twleansw.com:8081/artifactory/public</url>
+                <releases>
+                    <enabled>true</enabled>
+                </releases>
+                <snapshots>
+                    <enabled>true</enabled>
+                    <updatePolicy>always</updatePolicy>
+                </snapshots>
+            </repository>
+        </repositories>
+    </profile>
   </profiles>
 
 </settings>
