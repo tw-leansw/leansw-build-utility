@@ -10,6 +10,7 @@ SERVICE_NAME=${2}
 LABLE_FROM=${3}
 LEANSW_DOCKER_REGISTRY=${LEANSW_DOCKER_REGISTRY=reg.dev.twleansw.com/leansw}
 
+mkdir -p target
 if [ "${GO_STAGE}" = "dev" ]; then
     cp src/main/docker/* target/
     printf "\n" >>target/Dockerfile
