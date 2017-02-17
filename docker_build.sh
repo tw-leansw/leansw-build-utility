@@ -35,7 +35,7 @@ echo "============================"
 IMAGE_NAME=${LEANSW_DOCKER_REGISTRY}/${SERVICE_NAME}:${GO_STAGE}
 IMAGE_NAME_WITH_VERSION=${IMAGE_NAME}-${GO_PIPELINE_LABEL}
 
-docker build -f target/Dockerfile -t ${IMAGE_NAME} target
+docker build --pull -f target/Dockerfile -t ${IMAGE_NAME} target
 docker tag ${IMAGE_NAME} ${IMAGE_NAME_WITH_VERSION}
 
 docker push ${IMAGE_NAME}
